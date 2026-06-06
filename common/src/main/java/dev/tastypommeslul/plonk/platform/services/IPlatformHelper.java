@@ -1,4 +1,4 @@
-package com.example.examplemod.platform.services;
+package dev.tastypommeslul.plonk.platform.services;
 
 public interface IPlatformHelper {
 
