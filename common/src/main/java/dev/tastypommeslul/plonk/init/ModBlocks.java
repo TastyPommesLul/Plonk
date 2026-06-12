@@ -1,5 +1,7 @@
 package dev.tastypommeslul.plonk.init;
 
-public class ModItems {
+public class ModBlocks {
+
+
     public static void init() {}
 }

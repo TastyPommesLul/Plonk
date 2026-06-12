@@ -1,4 +1,4 @@
-package dev.tastypommeslul.plonk.platform.services;
+package dev.tastypommeslul.plonk.platform.util;
 
 import net.minecraft.resources.Identifier;
 
