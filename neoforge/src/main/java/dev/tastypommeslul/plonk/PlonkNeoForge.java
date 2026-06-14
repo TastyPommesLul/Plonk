@@ -11,5 +11,7 @@ public class PlonkNeoForge {
     public PlonkNeoForge(IEventBus eventBus) {
         NeoForgeRegistryHelper.register(eventBus);
         PlonkCommon.init();
+
+        eventBus.addListener(PlonkDatagen::onGatherClientData);
     }
 }
