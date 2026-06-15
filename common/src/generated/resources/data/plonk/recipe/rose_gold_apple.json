@@ -1,0 +1,17 @@
+{
+  "type": "minecraft:crafting_shaped",
+  "category": "misc",
+  "group": "rose_gold_apple",
+  "key": {
+    "A": "minecraft:apple",
+    "M": "plonk:rose_gold_ingot"
+  },
+  "pattern": [
+    "MMM",
+    "MAM",
+    "MMM"
+  ],
+  "result": {
+    "id": "plonk:rose_gold_apple"
+  }
+}

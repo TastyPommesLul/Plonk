@@ -9,7 +9,6 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
-import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -34,7 +33,8 @@ public interface IRegistryHelper {
     <T extends BlockItem> RegistryHandle<T> registerBlockItem(String name, RegistryHandle<? extends Block> block, BiFunction<Block, Item.Properties, T> item);
     <T extends Block> RegistryHandle<T> registerBlock(String name, Function<BlockBehaviour.Properties, T> block);
 
-    RegistryHandle<CreativeModeTab> registerCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput> entries);
+    RegistryHandle<CreativeModeTab> registerCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput<Item>> entries);
+    RegistryHandle<CreativeModeTab> registerSimpleCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput<RegistryHandle<Item>>> entries);
 
     static ResourceKey<Block> blockKey(String name) {
         return ResourceKey.create(Registries.BLOCK, Constants.id(name));
@@ -45,7 +45,7 @@ public interface IRegistryHelper {
     }
 
     @FunctionalInterface
-    interface CreativeTabOutput {
-        void accept(ItemLike itemLike);
+    interface CreativeTabOutput<T> {
+        void accept(T itemLike);
     }
 }

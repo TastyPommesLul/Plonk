@@ -69,11 +69,33 @@ public class NeoForgeRegistryHelper implements IRegistryHelper {
     }
 
     @Override
-    public RegistryHandle<CreativeModeTab> registerCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput> entries) {
+    public RegistryHandle<CreativeModeTab> registerSimpleCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput<RegistryHandle<Item>>> entries) {
         Identifier id = Constants.id(name);
         DeferredHolder<CreativeModeTab, CreativeModeTab> deferredTab = CREATIVE_MODE_TABS.register(name,
                 () -> CreativeModeTab.builder()
-                        .title(Component.translatable("itemGroup." + Constants.MOD_ID + name))
+                        .title(Component.translatable("itemGroup." + Constants.MOD_ID + "." + name))
+                        .icon(icon)
+                        .displayItems((_, output) -> entries.accept(registryHandle -> output.accept(registryHandle.get())))
+                        .build());
+        return new RegistryHandle<>() {
+            @Override
+            public Identifier id() {
+                return id;
+            }
+
+            @Override
+            public CreativeModeTab get() {
+                return deferredTab.get();
+            }
+        };
+    }
+
+    @Override
+    public RegistryHandle<CreativeModeTab> registerCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput<Item>> entries) {
+        Identifier id = Constants.id(name);
+        DeferredHolder<CreativeModeTab, CreativeModeTab> deferredTab = CREATIVE_MODE_TABS.register(name,
+                () -> CreativeModeTab.builder()
+                        .title(Component.translatable("itemGroup." + Constants.MOD_ID + "." + name))
                         .icon(icon)
                         .displayItems((_, output) -> entries.accept(output::accept))
                         .build());

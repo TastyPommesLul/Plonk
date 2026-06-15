@@ -1,6 +1,7 @@
 package dev.tastypommeslul.plonk.platform;
 
 import dev.tastypommeslul.plonk.Constants;
+
 import dev.tastypommeslul.plonk.platform.services.IPlatformHelper;
 import dev.tastypommeslul.plonk.platform.services.IRegistryHelper;
 

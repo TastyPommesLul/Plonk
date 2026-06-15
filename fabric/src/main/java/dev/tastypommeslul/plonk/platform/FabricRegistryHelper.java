@@ -14,6 +14,7 @@ import net.minecraft.world.item.BlockItem;
 import net.minecraft.world.item.CreativeModeTab;
 import net.minecraft.world.item.Item;
 import net.minecraft.world.item.ItemStack;
+import net.minecraft.world.level.ItemLike;
 import net.minecraft.world.level.block.Block;
 import net.minecraft.world.level.block.state.BlockBehaviour;
 
@@ -67,12 +68,35 @@ public class FabricRegistryHelper implements IRegistryHelper {
         };
     }
 
+
     @Override
-    public RegistryHandle<CreativeModeTab> registerCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput> entries) {
+    public RegistryHandle<CreativeModeTab> registerSimpleCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput<RegistryHandle<Item>>> entries) {
         Identifier id = Constants.id(name);
         CreativeModeTab registered = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, id,
                 FabricCreativeModeTab.builder()
-                        .title(Component.translatable("itemGroup." + Constants.MOD_ID))
+                        .title(Component.translatable("itemGroup." + Constants.MOD_ID + "." + name))
+                        .icon(icon)
+                        .displayItems((_, output) -> entries.accept(registryHandle -> output.accept(registryHandle.get())))
+                        .build());
+        return new RegistryHandle<>() {
+            @Override
+            public Identifier id() {
+                return id;
+            }
+
+            @Override
+            public CreativeModeTab get() {
+                return registered;
+            }
+        };
+    }
+
+    @Override
+    public RegistryHandle<CreativeModeTab> registerCreativeTab(String name, Supplier<ItemStack> icon, Consumer<CreativeTabOutput<Item>> entries) {
+        Identifier id = Constants.id(name);
+        CreativeModeTab registered = Registry.register(BuiltInRegistries.CREATIVE_MODE_TAB, id,
+                FabricCreativeModeTab.builder()
+                        .title(Component.translatable("itemGroup." + Constants.MOD_ID + "." + name))
                         .icon(icon)
                         .displayItems((_, output) -> entries.accept(output::accept))
                         .build());
