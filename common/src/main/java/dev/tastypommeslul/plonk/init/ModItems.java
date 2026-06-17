@@ -2,7 +2,6 @@ package dev.tastypommeslul.plonk.init;
 
 import dev.tastypommeslul.plonk.platform.Services;
 import dev.tastypommeslul.plonk.platform.util.RegistryHandle;
-import net.minecraft.core.component.DataComponents;
 import net.minecraft.world.item.*;
 
 public class ModItems {
