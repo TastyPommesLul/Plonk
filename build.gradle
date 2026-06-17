@@ -1,6 +1,32 @@
 plugins {
+    id 'base'
     // see https://fabricmc.net/develop/ for new versions
     id 'net.fabricmc.fabric-loom' version '1.15.5' apply false
     // see https://projects.neoforged.net/neoforged/moddevgradle for new versions
     id 'net.neoforged.moddev' version '2.0.141' apply false
+}
+
+tasks.register('collectJars', Copy) {
+    group = 'build'
+    description = 'Collects production jars from all subprojects into the root build/libs folder.'
+
+    subprojects { subproject ->
+        subproject.plugins.withType(JavaPlugin) {
+            if (subproject.tasks.findByName('jar')) {
+                dependsOn subproject.tasks.named('jar')
+
+                from(subproject.tasks.named('jar').map { it.archiveFile }) {
+                    rename { String filename ->
+                        "plonk-${subproject.version}-mc${subproject.minecraft_version}-${subproject.name}.jar"
+                    }
+                }
+            }
+        }
+    }
+
+    into layout.buildDirectory.dir("libs")
+}
+
+tasks.named('build') {
+    finalizedBy tasks.named('collectJars')
 }
