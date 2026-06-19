@@ -67,6 +67,9 @@ public class PlonkLanguageProvider extends LanguageProvider {
         add(ModCreativeModeTabs.PLONK_TOOLS_ARMOR.get().getDisplayName(), switch (language) {
             case ENGLISH -> "Plonk Tools & Armor";
         });
+        add("trim_material.plonk.rose_gold", switch (language) {
+            case ENGLISH -> "Rose Gold Material";
+        });
     }
 
     private void add(Component component, String value) {

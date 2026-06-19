@@ -43,6 +43,16 @@ public class PlonkCommon {
         CreativeMods.insertAfter(VanillaTabs.TOOLS_AND_UTILITIES,
                 () -> new ItemStack(ModItems.ROSE_GOLD_AXE.get()), () -> new ItemStack(ModItems.ROSE_GOLD_HOE.get()));
 
+
+        CreativeMods.insertAfter(VanillaTabs.COMBAT,
+                () -> new ItemStack(Items.GOLDEN_BOOTS), () -> new ItemStack(ModItems.ROSE_GOLD_HELMET.get()));
+        CreativeMods.insertAfter(VanillaTabs.COMBAT,
+                () -> new ItemStack(ModItems.ROSE_GOLD_HELMET.get()), () -> new ItemStack(ModItems.ROSE_GOLD_CHESTPLATE.get()));
+        CreativeMods.insertAfter(VanillaTabs.COMBAT,
+                () -> new ItemStack(ModItems.ROSE_GOLD_CHESTPLATE.get()), () -> new ItemStack(ModItems.ROSE_GOLD_LEGGINGS.get()));
+        CreativeMods.insertAfter(VanillaTabs.COMBAT,
+                () -> new ItemStack(ModItems.ROSE_GOLD_LEGGINGS.get()), () -> new ItemStack(ModItems.ROSE_GOLD_BOOTS.get()));
+
         CreativeMods.insertAfter(VanillaTabs.FOOD_AND_DRINKS,
                 () -> new ItemStack(Items.GOLDEN_APPLE), () -> new ItemStack(ModItems.ROSE_GOLD_APPLE.get()));
     }

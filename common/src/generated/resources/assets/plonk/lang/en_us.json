@@ -14,5 +14,6 @@
   "item.plonk.rose_gold_spear": "Rose Gold Spear",
   "item.plonk.rose_gold_sword": "Rose Gold Sword",
   "itemGroup.plonk.plonk_materials": "Plonk Minerals",
-  "itemGroup.plonk.plonk_tools_armor": "Plonk Tools & Armor"
+  "itemGroup.plonk.plonk_tools_armor": "Plonk Tools & Armor",
+  "trim_material.plonk.rose_gold": "Rose Gold Material"
 }
