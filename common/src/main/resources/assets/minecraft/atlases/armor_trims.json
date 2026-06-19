@@ -1,0 +1,12 @@
+{
+  "sources": [
+    {
+      "type": "paletted_permutations",
+      "textures": [],
+      "palette_key": "trims/color_palettes/trim_palette",
+      "permutations": {
+        "rose_gold": "trims/color_palettes/rose_gold"
+      }
+    }
+  ]
+}
