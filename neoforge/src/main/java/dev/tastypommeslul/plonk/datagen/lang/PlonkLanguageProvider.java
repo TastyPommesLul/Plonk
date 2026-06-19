@@ -48,6 +48,19 @@ public class PlonkLanguageProvider extends LanguageProvider {
             case ENGLISH -> "Rose Gold Apple";
         });
 
+        add(ModItems.ROSE_GOLD_HELMET.get(), switch (language) {
+            case ENGLISH -> "Rose Gold Helmet";
+        });
+        add(ModItems.ROSE_GOLD_CHESTPLATE.get(), switch (language) {
+            case ENGLISH -> "Rose Gold Chestplate";
+        });
+        add(ModItems.ROSE_GOLD_LEGGINGS.get(), switch (language) {
+            case ENGLISH -> "Rose Gold Leggings";
+        });
+        add(ModItems.ROSE_GOLD_BOOTS.get(), switch (language) {
+            case ENGLISH -> "Rose Gold Boots";
+        });
+
         add(ModCreativeModeTabs.PLONK_MATERIALS.get().getDisplayName(), switch (language) {
             case ENGLISH -> "Plonk Minerals";
         });
