@@ -2,7 +2,6 @@ package dev.tastypommeslul.plonk.datagen;
 
 import dev.tastypommeslul.plonk.Constants;
 import dev.tastypommeslul.plonk.init.ModTrimMaterials;
-import net.minecraft.core.Holder;
 import net.minecraft.core.HolderLookup;
 import net.minecraft.core.RegistrySetBuilder;
 import net.minecraft.core.registries.Registries;
