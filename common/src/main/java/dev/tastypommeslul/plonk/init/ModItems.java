@@ -3,6 +3,7 @@ package dev.tastypommeslul.plonk.init;
 import dev.tastypommeslul.plonk.platform.Services;
 import dev.tastypommeslul.plonk.platform.util.RegistryHandle;
 import net.minecraft.world.item.*;
+import net.minecraft.world.item.equipment.ArmorType;
 
 public class ModItems {
 
@@ -26,6 +27,19 @@ public class ModItems {
                     6.75F, 5.1F, 11.25F, 4.6F)));
     public static final RegistryHandle<Item> ROSE_GOLD_APPLE = Services.REGISTRY.registerItem("rose_gold_apple",
             properties -> new Item(properties.food(ModFoods.ROSE_GOLD_APPLE_FOOD, ModFoods.ROSE_GOLD_APPLE_CONSUMABLE)));
+
+    public static final RegistryHandle<Item> ROSE_GOLD_HELMET = Services.REGISTRY.registerItem("rose_gold_helmet",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_GOLD_MATERIAL, ArmorType.HELMET)
+                    .durability(ArmorType.HELMET.getDurability(ModArmorMaterials.ROSE_GOLD_BASE_DURABILITY))));
+    public static final RegistryHandle<Item> ROSE_GOLD_CHESTPLATE = Services.REGISTRY.registerItem("rose_gold_chestplate",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_GOLD_MATERIAL, ArmorType.CHESTPLATE)
+                    .durability(ArmorType.HELMET.getDurability(ModArmorMaterials.ROSE_GOLD_BASE_DURABILITY))));
+    public static final RegistryHandle<Item> ROSE_GOLD_LEGGINGS = Services.REGISTRY.registerItem("rose_gold_leggings",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_GOLD_MATERIAL, ArmorType.LEGGINGS)
+                    .durability(ArmorType.HELMET.getDurability(ModArmorMaterials.ROSE_GOLD_BASE_DURABILITY))));
+    public static final RegistryHandle<Item> ROSE_GOLD_BOOTS = Services.REGISTRY.registerItem("rose_gold_boots",
+            properties -> new Item(properties.humanoidArmor(ModArmorMaterials.ROSE_GOLD_MATERIAL, ArmorType.BOOTS)
+                    .durability(ArmorType.HELMET.getDurability(ModArmorMaterials.ROSE_GOLD_BASE_DURABILITY))));
 
 
     public static void init() {}

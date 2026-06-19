@@ -1,0 +1,19 @@
+{
+  "layers": {
+    "humanoid": [
+      {
+        "texture": "plonk:rose_gold"
+      }
+    ],
+    "humanoid_baby": [
+      {
+        "texture": "plonk:rose_gold"
+      }
+    ],
+    "humanoid_leggings": [
+      {
+        "texture": "plonk:rose_gold"
+      }
+    ]
+  }
+}

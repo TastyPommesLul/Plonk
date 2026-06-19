@@ -22,6 +22,11 @@ public class ModCreativeModeTabs {
        entries.accept(ModItems.ROSE_GOLD_SHOVEL);
        entries.accept(ModItems.ROSE_GOLD_HOE);
        entries.accept(ModItems.ROSE_GOLD_SPEAR);
+
+       entries.accept(ModItems.ROSE_GOLD_HELMET);
+       entries.accept(ModItems.ROSE_GOLD_CHESTPLATE);
+       entries.accept(ModItems.ROSE_GOLD_LEGGINGS);
+       entries.accept(ModItems.ROSE_GOLD_BOOTS);
     });
 
     public static void init() {}
