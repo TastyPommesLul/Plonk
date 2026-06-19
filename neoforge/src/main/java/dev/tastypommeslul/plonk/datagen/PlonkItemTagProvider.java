@@ -31,5 +31,13 @@ public class PlonkItemTagProvider extends ItemTagsProvider {
         tag(ItemTags.CHEST_ARMOR).add(ModItems.ROSE_GOLD_CHESTPLATE.get());
         tag(ItemTags.LEG_ARMOR).add(ModItems.ROSE_GOLD_LEGGINGS.get());
         tag(ItemTags.FOOT_ARMOR).add(ModItems.ROSE_GOLD_BOOTS.get());
+
+        tag(ItemTags.TRIMMABLE_ARMOR)
+                .add(ModItems.ROSE_GOLD_HELMET.get())
+                .add(ModItems.ROSE_GOLD_CHESTPLATE.get())
+                .add(ModItems.ROSE_GOLD_LEGGINGS.get())
+                .add(ModItems.ROSE_GOLD_BOOTS.get());
+
+        tag(ItemTags.TRIM_MATERIALS).add(ModItems.ROSE_GOLD_INGOT.get());
     }
 }

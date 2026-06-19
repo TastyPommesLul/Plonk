@@ -22,7 +22,7 @@ public class ModTrimMaterials {
 
     private static void register(BootstrapContext<TrimMaterial> context, ResourceKey<TrimMaterial> trimKey, Item item,
                                  Style style) {
-        TrimMaterial trimmaterial = new TrimMaterial(MaterialAssetGroup.create("bismuth"),
+        TrimMaterial trimmaterial = new TrimMaterial(MaterialAssetGroup.create("rose_gold"),
                 Component.translatable(Util.makeDescriptionId("trim_material", trimKey.identifier())).withStyle(style));
         context.register(trimKey, trimmaterial);
     }
