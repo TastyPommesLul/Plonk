@@ -9,7 +9,6 @@ public final class PlonkDatagen {
 
     public static void onGatherClientData(GatherDataEvent.Client event) {
         event.createProvider(PlonkModelProvider::new);
-        event.createProvider(PlonkDatapackProvider::new);
         event.createProvider(PlonkBlockTagProvider::new);
         event.createProvider(PlonkItemTagProvider::new);
         event.createProvider(PlonkLootTableProvider::new);

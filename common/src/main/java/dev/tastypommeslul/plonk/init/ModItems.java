@@ -8,8 +8,7 @@ import net.minecraft.world.item.equipment.ArmorType;
 public class ModItems {
 
     public static final RegistryHandle<Item> RAW_ROSE_GOLD = Services.REGISTRY.registerItem("raw_rose_gold", Item::new);
-    public static final RegistryHandle<Item> ROSE_GOLD_INGOT = Services.REGISTRY.registerItem("rose_gold_ingot",
-            properties -> new Item(properties.trimMaterial(ModTrimMaterials.ROSE_GOLD)));
+    public static final RegistryHandle<Item> ROSE_GOLD_INGOT = Services.REGISTRY.registerItem("rose_gold_ingot", Item::new);
     public static final RegistryHandle<Item> ROSE_GOLD_NUGGET = Services.REGISTRY.registerItem("rose_gold_nugget", Item::new);
 
     public static final RegistryHandle<Item> ROSE_GOLD_SWORD = Services.REGISTRY.registerItem("rose_gold_sword",
